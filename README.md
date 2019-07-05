@@ -22,5 +22,5 @@ For better results :
 2. Image size should be (2500-3500)*(2000-3000)
 3. There should be background around four edges of the image.
 
-These points should be taken care for better results than the normal results 
+These points should be taken care for obtaining better result than the normal result. 
 (NOTE)At last user can itself crop its document if not satisfied with the output.(yet to implement)
