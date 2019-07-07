@@ -25,4 +25,4 @@ For better results :
 These points should be taken care for obtaining better result than the normal result. 
 (NOTE)At last user can itself crop its document if not satisfied with the output.(yet to implement)
 
-![GitHub Logo](/images/desk.jfif)
+
