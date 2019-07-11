@@ -7,11 +7,10 @@ import imutils
 import argparse
 from skimage.filters import threshold_local
 import math
-import os
+from PIL import Image
+import pytesseract
 
 app = Flask(__name__)
-
-
 
 def thresholding(img):
     dilated_img = cv2.dilate(img, np.ones((5,5), np.uint8))
@@ -174,6 +173,8 @@ def show():
         response = {
             'img_name' : filename
         }
+        text = pytesseract.image_to_string(Image.open('templates/'+filename))
+        response['text'] = text
         return render_template('show_scanned_doc.html' , response = response)
 
 @app.route('/upload/<filename>')
