@@ -16,6 +16,7 @@ Next we can do anything with this text using NLP techniques.
 2. pip install > requirements.txt
 3. python scanner.py --image <image_name>
 4. python ocr.py --image <image_name>
+5. Run Flask Server for practical application
 # NOTE:
 For better results : 
 1. Image should be clicked on 'dark againstbright background' or 'bright against dark background'.
