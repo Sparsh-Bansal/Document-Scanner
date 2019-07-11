@@ -90,11 +90,37 @@ def thresholding(img):
     return thr_img
 
 def angle(x1,y1,x2,y2,x3,y3):
-	m1 = (y2-y1)/(x2-x1)
-	m2 = (y3-y2)/(x3-x2)
-	m = np.absolute((m1-m2)/(1+(m1*m2)))
-	ang = math.atan(m)
-	return ang
+    if x2==x1:
+        if x3==x2:
+            ang=0
+        else:
+            m2 = (y3 - y2) / (x3 - x2)
+            if m2==0:
+                ang = 1.57
+            else:
+                ang = math.atan(1/m2)
+    elif x2 == x3:
+        if x1==x2:
+            ang=0
+        else:
+            m1 = (y2 - y1) / (x2 - x1)
+            if m1==0:
+                ang = 1.57
+            else:
+                ang = math.atan(-1/m1)
+    else:
+        m1 = (y2-y1)/(x2-x1)
+        m2 = (y3-y2)/(x3-x2)
+        # print(m1,m2)
+        if (m1*m2) != -1:
+            m = (m1-m2)/(1+(m1*m2))
+            ang = math.atan(m)
+        else:
+            ang = 1.57
+    if ang<0:
+        ang = ang+3.14
+
+    return ang
 
 def document_scanner(original_image,heights):
     global original
@@ -145,8 +171,9 @@ def document_scanner(original_image,heights):
             a2 = angle(screenCnt[1][0][0],screenCnt[1][0][1],screenCnt[2][0][0],screenCnt[2][0][1],screenCnt[3][0][0],screenCnt[3][0][1])
             a3 = angle(screenCnt[2][0][0],screenCnt[2][0][1],screenCnt[3][0][0],screenCnt[3][0][1],screenCnt[0][0][0],screenCnt[0][0][1])
             a4 = angle(screenCnt[3][0][0],screenCnt[3][0][1],screenCnt[0][0][0],screenCnt[0][0][1],screenCnt[1][0][0],screenCnt[1][0][1])
+            print('{},{},{},{}'.format(a1,a2,a3,a4))
 
-            if a1<1.744 and a1>1.395 and a2<1.744 and a2>1.395 and a3<1.744 and a3>1.395 and a4<1.744 and a4>1.395:
+            if a1<1.918 and a1>1.222 and a2<1.918 and a2>1.222 and a3<1.918 and a3>1.222 and a4<1.918 and a4>1.222:
                 if check:
                     print("STEP 2: Find contours of paper")
                     cv2.drawContours(original_image, [screenCnt], -1, (0, 255, 0), 2)
@@ -161,11 +188,11 @@ def document_scanner(original_image,heights):
         else:
             continue
 
-    if a1<1.744 and a1>1.395 and a2<1.744 and a2>1.395 and a3<1.744 and a3>1.395 and a4<1.744 and a4>1.395:
+    if a1<1.918 and a1>1.222 and a2<1.918 and a2>1.222 and a3<1.918 and a3>1.222 and a4<1.918 and a4>1.222:
 
         warped = four_point_transform(original, screenCnt.reshape(4, 2) *ratio)
         warped = cv2.cvtColor(warped, cv2.COLOR_BGR2GRAY)
-        # _,warped = cv2.threshold(warped , 0 , 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+            # _,warped = cv2.threshold(warped , 0 , 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU)
         cv2.imshow('YOY',warped)
         T = threshold_local(warped, 11, offset=10, method="gaussian")
         warped = (warped > T).astype("uint8") * 255
