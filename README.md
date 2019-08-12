@@ -28,6 +28,6 @@ These points should be taken care for obtaining better result than the normal re
 # Results
 ![Input](/images/desk.jfif) ![Output](/output/desk_detected.jpg)
 <p float="left">
-  <img src="images/test.jpg" width="100" />
-  <img src="output/test_detected.jpg" width="100" /> 
+  <img src="images/test.jpg" width="400" height="600" />
+  <img src="output/test_detected.jpg" width="400" height="600" /> 
 </p>
