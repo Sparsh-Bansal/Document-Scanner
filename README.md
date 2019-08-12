@@ -28,10 +28,35 @@ These points should be taken care for obtaining better result than the normal re
 # Results
 
 <p float="left">
-  <img src="images/desk.jfif" width="300" height="400" />
-  <img src="output/desk_detected.jpg" width="300" height="400" /> 
+  <img src="images/desk.jfif" width="400" height="600" />
+  <img src="output/desk_detected.jpg" width="400" height="600" /> 
 </p>
 <p float="left">
   <img src="images/test.jpg" width="400" height="600" />
   <img src="output/test_detected.jpg" width="400" height="600" /> 
 </p>
+<p float="left">
+  <img src="images/notes2.jpg" width="400" height="600" />
+  <img src="output/notes2_detected.jpg" width="400" height="600" /> 
+</p>
+<p float="left">
+  <img src="images/page.jpg" width="400" height="600" />
+  <img src="output/page_detected.jpg" width="400" height="600" /> 
+</p>
+<p float="left">
+  <img src="images/IMG_20190703_104040.jpg" width="400" height="600" />
+  <img src="output/IMG_20190703_104040_detected.jpg" width="400" height="600" /> 
+</p>
+<p float="left">
+  <img src="images/IMG_20190705_130325.jpg" width="400" height="600" />
+  <img src="output/IMG_20190705_130325_detected.jpg" width="400" height="600" /> 
+</p>
+<p float="left">
+  <img src="images/IMG_20190704_103211.jpg" width="400" height="600" />
+  <img src="output/IMG_20190704_103211_detected.jpg" width="400" height="600" /> 
+</p>
+<p float="left">
+  <img src="images/IMG_20190703_132124.jpg" width="400" height="600" />
+  <img src="output/IMG_20190703_132124_detected.jpg" width="400" height="600" /> 
+</p>
+# More Results at images and output folder.
