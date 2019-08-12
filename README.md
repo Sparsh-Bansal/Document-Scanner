@@ -26,7 +26,11 @@ For better results :
 These points should be taken care for obtaining better result than the normal result. 
 (NOTE)At last user can itself crop its document if not satisfied with the output.(yet to implement)
 # Results
-![Input](/images/desk.jfif) ![Output](/output/desk_detected.jpg)
+
+<p float="left">
+  <img src="images/desk.jfif" width="300" height="400" />
+  <img src="output/desk_detected.jpg" width="300" height="400" /> 
+</p>
 <p float="left">
   <img src="images/test.jpg" width="400" height="600" />
   <img src="output/test_detected.jpg" width="400" height="600" /> 
