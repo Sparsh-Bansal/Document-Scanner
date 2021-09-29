@@ -10,7 +10,7 @@ itsdangerous==1.1.0
 Jinja2==2.10.1
 MarkupSafe==1.1.1
 networkx==2.3
-nltk==3.4.3
+nltk==3.6.3
 numpy==1.16.4
 opencv-python==4.1.0.25
 Pillow==6.0.0
